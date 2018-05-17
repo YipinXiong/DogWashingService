@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Order Page</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script>
+	$(function() {
+	  $('input[id="datetimes"]').daterangepicker({
+	    timePicker: true,
+	    startDate: moment().startOf('hour'),
+	    locale: {
+	      format: 'M/DD hh:mm A'
+	    }
+	  });
+	});
+	</script>
+</head>
+<body>
+	<div class="container">
+	    <div class="row">
+	        <h1 style="text-align: center"> Thank you for your support</h1>
+	        <div style="width: 30%; margin: 25px auto;">
+	            <form >
+	                <div class="form-group">
+	                    <input class="form-control" type="text" name="firstname" placeholder="Your name">
+	                    <input class="form-control" type="text" name="address" placeholder="Your address">
+	                    <input class="form-control" type="text" name="phone_number" placeholder="Phone_number">
+	                    <input class="form-control" type="text" name="email" placeholder="email">
+	                    <input class="form-control" type="text" name="dog_name" placeholder="Your dog's name">
+	                    <input class="form-control" type="text" id= "datetimes" name="date" placeholder="Your dog's date-of-birth">
+						<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <label class="input-group-text" for="inputGroupSelect01">Services</label>
+						  </div>
+						  	<select class="custom-select" id="inputGroupSelect01">
+						    	<option selected>Choose Your server</option>
+						    	<option value="1"> wash only	10$</option>
+						    	<option value="2"> wash and nail clipping	15$</option>
+						    	<option value="3"> deluxe grooming	20$</option>
+						  	</select>
+						  	<input class="form-control" type="text" name="extraInfo" placeholder="special instructions to the Groomer">
+						</div>	                    
+	                </div>
+	                <div class="form-group">
+	                	<label for="agreed">I agree to the terms and conditions</label> 
+						<input id="agreed" name="agreed" type="checkbox">
+	                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+	                </div>
+	            </form>
+	            <a href="/campgrounds">Go Back</a>
+	        </div>
+	    </div>
+	</div>
+
+
+</body>
+</html>

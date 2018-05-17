@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-seedDB(); //seed the database
+// seedDB(); //seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -47,7 +47,12 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
-
+app.get("/profile", function(req, res){
+    res.render("profile");
+});
+app.get("/order", function(req, res){
+    res.render("order");
+});
 // app.listen(process.env.PORT, process.env.IP, function(){
 app.listen(8080, "localhost", function(){
    console.log("The Server Has Started!");

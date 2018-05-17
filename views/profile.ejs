@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body, html {
+		    height: 100%;
+		    margin: 0;
+		    background-position: center;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+		}
+	</style>
+	<title>Profile Page</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<script>
+	$(function() {
+	  $('input[id="datetimes"]').daterangepicker({
+	    timePicker: true,
+	    startDate: moment().startOf('hour'),
+	    locale: {
+	      format: 'M/DD hh:mm A'
+	    }
+	  });
+	});
+	</script>
+</head>
+<body background="http://longwallpapers.com/Desktop-Wallpaper/dog-wallpapers-high-quality-resolution-For-Desktop-Wallpaper.jpg">
+	<div class="container">
+	    <div class="row">
+	        <h1 style="text-align: center" color="white"> New Profile</h1>
+	        <div style="width: 30%; margin: 25px auto;">
+	            <form action="/profile">
+	                <div class="form-group">
+	                    <input class="form-control" type="text" name="firstname" placeholder="firstname">
+	                    <input class="form-control" type="text" name="lastname" placeholder="lastname">
+	                    <input class="form-control" type="text" name="address" placeholder="address">
+	                    <input class="form-control" type="text" name="home_number" placeholder="home_number">
+	                    <input class="form-control" type="text" name="work_number" placeholder="work_number">
+	                    <input class="form-control" type="text" name="dog_name" placeholder="Your dog's name">
+	                    <input class="form-control" type="text" name="breed" placeholder="Your dog's breed">
+	                    <input class="form-control" type="text" id= "datetimes" name="date" placeholder="Your dog's date-of-birth">
+	                    <div class="input-group mb-3">
+						  	<div class="input-group-prepend">
+						    	<span class="input-group-text">Upload</span>
+						  	</div>
+						  	<div class="custom-file">
+						    	<input type="file" class="custom-file-input" id="inputGroupFile01">
+						    	<label class="custom-file-label" for="inputGroupFile01">Your Dog's picture</label>
+						  	</div>
+						</div>
+	                </div>
+	                <div class="form-group">
+	                	<label for="agreed">I agree to the terms and conditions</label> 
+						<input id="agreed" name="agreed" type="checkbox">
+	                    <button class="btn btn-lg btn-primary btn-block" href="/">Submit</button>
+	                </div>
+	            </form>
+	            <a href="/campgrounds">Go Back</a>
+	        </div>
+	    </div>
+	</div>
+
+
+</body>
+</html>
