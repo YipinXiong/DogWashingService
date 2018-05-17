@@ -4,6 +4,34 @@
         <title>Dog Groom</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/main.css">
+        <meta charset="utf-8">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>jQuery UI Datepicker - Default functionality</title>
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+          <link rel="stylesheet" href="/resources/demos/style.css">
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script>
+          $( function() {
+            $( "#datepicker" ).datepicker();
+          } );
+          </script>
+            <script>
+            $(function() {
+              $('input[id="datetimes"]').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                locale: {
+                  format: 'M/DD hh:mm A'
+                }
+              });
+            });
+            </script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     </head>
     <body>
     <nav class="navbar navbar-default">
@@ -17,7 +45,8 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Sign Up</a></li>
                     <% } else { %>
-                        <li><a href="#">Welcome <%= currentUser.username %></a></li>
+                        <li><a href="/profile">Welcome <%= currentUser.username %></a></li>
+                        <li><a href="/order"> Make a order</a></li>
                         <li><a href="/logout">Logout</a></li>
                     <% } %>
                 </ul>
